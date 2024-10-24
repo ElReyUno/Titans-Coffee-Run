@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Titan Coffee Run - Apply For Credit</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Order delicious coffee online for delivery at St. Petersburg College. We serve students, faculty, and staff."> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Lobster+Two&family=Roboto+Slab:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+      <a href="apply-for-credit.html"></a>
+        <h1>Titan Coffee Run</h1>
+      </header>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="contact-us.html">Contact Us</a></li>
+          <li><a href="apply-for-credit.html">Apply for Credit</a></li>
+        </ul>
+      </nav>
+
+    <main>
+      <h2>Apply for Credit</h2>
+      <p>Fill out the form below to apply for credit with Titan Coffee Shop. All information is required.</p>
+      <form action="#" method="post">
+        <div class="input-container">
+        <label for="myEmail">Email Address:</label>
+        <input type="email" id="myEmail" name="myEmail" required>
+        </div>
+        <div class="input-container">
+        <label for="myReEmail">Re-Enter Email Address:</label>
+        <input type="email" id="myReEmail" name="myReEmail" required>
+        </div>
+        <div class="input-container">
+        <label for="myFirstName">First Name:</label>
+        <input type="text" id="myFirstName" name="myFirstName" required>
+        </div>
+        <div class="input-container">
+        <label for="myLastName">Last Name:</label>
+        <input type="text" id="myLastName" name="myLastName" required>
+        </div>
+        <div class="input-container">
+        <label for="myCity">City:</label>
+        <input type="text" id="myCity" name="myCity" list="city" required>
+        </div>
+        <div class="input-container">
+        <label for="myState">State:</label>
+        <input type="text" id="myState" name="myState" required>
+        </div>
+        <div class="input-container">
+         <label for="myZip">ZIP Code:</label>
+         <input type="text" id="myZip" name="myZip" required>
+         </div>
+         <div class="input-container">
+         <label for="myGross">Gross Income:</label>
+         <input type="text" id="myGross" name="myGross" required>
+         </div>
+         <div class="input-container">
+            <label for="mySsn">Last 4 digits of SSN:</label>
+            <input type="text" id="mySsn" name="mySsn" required>
+            </div>
+            <div class="input-container">
+            <label for="applyForCredit">
+              <input type="checkbox" id="applyForCredit" name="applyForCredit" required> 
+              This request serves as my written instruction to Titan Coffee Run to obtain a “soft inquiry” about 
+              my credit information, which won’t affect my credit score. I agree that TCR can send me an email 
+              confirming my request.
+            </label>
+          </div>
+        <input type="submit" id="myApply" value="Apply">
+        <button type="reset" id="resetButton">Reset</button>
+      </form>
+
+      <div id="resultsContainer"> 
+        <table id="resultsTable">
+        <thead>
+          <tr>
+            <th>Field</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      </div>
+
+      <div id="ad-container"></div>
+    </main>
+
+    <footer>
+      Copyright &copy; 2083 EL REY UNO
+      <p>For More Information Please Visit <a href="https://www.github.com/ElReyUno" target="_blank" rel="noopener" title="Git El Rey Uno"> El Rey Uno</a></p>
+      <p><a href="mailto:ssmith237@live.spcollege.edu">Send An E-Mail</a></p>
+    </footer>
+
+    <script src="js/rotator.js" async></script>
+    <script src="js/qualify.js" async></script>
+</body>
+</html>
