@@ -58,5 +58,6 @@ Skills include:
 - W3C Validator (HTML, CSS, XML)
 - Web Browsers (Chrome, FireFox, Edge, Internet Explorer)
 - Microsoft Office Suite
+- Documentation
 - An Agile Approach
 
