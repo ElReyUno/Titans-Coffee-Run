@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Titan Coffee Run</title>
+  <title>Titan Coffee Run - Login</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Order delicious coffee online for delivery at St. Petersburg College. We serve students, faculty, and staff."> 
@@ -9,12 +9,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Lobster+Two&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" href="./css/login.css">
 </head>
 
 <body>
     <header>
-      <a href="index.html"></a>
-        <h1>Titan Coffee Run</h1>
+      <a href="login.html"></a>
+        <h1>Titan Coffee Run - Login</h1>
       </header>
 
     <nav>
@@ -27,13 +28,18 @@
     </nav>
 
     <main>
-        <p>This is an online coffee delivery service for Students, Employees, and Faculty at St. Petersburg 
-         College</p>
-        <div id="banner" class="image-rotator">
-            <img src="img/coffee1.jpg" alt="Banner 1">
-            <img src="img/coffee2.jpg" alt="Banner 2">
-            <img src="img/coffee3.jpg" alt="Banner 3">
-            <img src="img/coffee4.jpg" alt="Banner 4">
+      <h2>Login</h2>
+      <form action="#" method="post" class="form-container">
+        <label for="loginUserName">User Name:</label>
+        <input type="text" id="loginUserName" name="loginUserName" required>
+        
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" name="loginPassword" required>
+      </form>
+        
+        <div class="button-container">
+          <input type="submit" id="loginButton" value="Login">
+          <button type="reset" id="resetPasswordButton">Reset Password</button>
         </div>
     </main>
     <footer>
@@ -41,5 +47,6 @@
       <p>For More Information Please Visit <a href="https://www.github.com/ElReyUno" target="_blank" rel="noopener" title="Git El Rey Uno"> El Rey Uno</a></p>
       <p><a href="mailto:ssmith237@live.spcollege.edu">ElReyUno@EddieZeboASlightWindow.org</a></p>
     </footer>
+    <script src="./js/login.js"></script>
 </body>
 </html>
