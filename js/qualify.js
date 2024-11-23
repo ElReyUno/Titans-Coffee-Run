@@ -1,3 +1,6 @@
+// This script allows the user to click and fill out a form to qualify, send their application,
+// be notified if the form is incorrectly filled out, be notified the amount they qualify for,
+// and be notified if they do not qualify for a credit line.
 const emailInput = document.getElementById('myEmail');
 const reEnterEmailInput = document.getElementById('myReEmail');
 const firstNameInput = document.getElementById('myFirstName');

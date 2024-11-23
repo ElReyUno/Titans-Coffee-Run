@@ -1,3 +1,5 @@
+// This script allows the user to click and fill out a form to register for an account
+// and log into the application, and start using the applications to place orders.
 document.addEventListener('DOMContentLoaded', function () {
    const form = document.querySelector('.form-container');
    const accountEmailInput = document.getElementById('accountEmail');

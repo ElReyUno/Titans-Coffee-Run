@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-  <title>Titan Coffee Run - Reset Password</title>
-  <meta charset="utf-8">
+  <title>Titan Coffee Run - Apply For Credit</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="Order delicious coffee online for delivery at St. Petersburg College. We serve students, faculty, and staff.">
@@ -12,43 +12,56 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Lobster+Two&family=Roboto+Slab:wght@400;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/styles.css">
-  <link rel="stylesheet" type="text/css" href="./css/reset.css">
+  <link rel="stylesheet" type="text/css" href="./css/styles.css">
+  <link rel="stylesheet" type="text/css" href="./css/apply.css">
 </head>
 
 <body>
   <header>
-    <a href="reset-password.html"></a>
+    <a href="index.html"></a>
     <button id="toggleMenu" onclick="toggleMenu()">≡</button>  <!-- Hamburger button -->
     <nav>
       <ul id="navMenu">
         <li><a href="index.html">Home</a></li>
         <li><a href="apply-for-credit.html">Apply for Credit</a></li>
         <li><a href="create-new-account.html"> Create New Account</a></li>
-        <li><a href="login.html"> Login</a></li>
       </ul>
     </nav>
-    <h1>Titan Coffee Run - Reset Password</h1>
+    <h1>Titan Coffee Run - Create A New Account</h1>
   </header>
 
   <main>
-    <h2>Reset Password</h2>
-    <form id="resetPasswordForm" action="#" method="post" class="form-container">
-      <label for="resetUserName">User Name:</label>
-      <input type="text" id="resetUserName" name="resetUserName" class="input-field" aria-labelledby="resetUserName"
-        required>
+    <form action="#" method="post" class="form-container">
+      <label for="accountEmail">Email Address:</label>
+      <input type="email" id="accountEmail" name="accountEmail" aria-labelledby="accountEmail" required>
 
-      <label for="resetPassword">New Password:</label>
-      <input type="password" id="resetPassword" name="resetPassword" class="input-field" aria-labelledby="resetPassword"
-        required>
+      <label for="accountPassword">Password:</label>
+      <input type="password" id="accountPassword" name="accountPassword" aria-labelledby="accountPassword" required>
+
+      <label for="confirmAccountPassword">Confirm Password:</label>
+      <input type="password" id="confirmAccountPassword" name="confirmAccountPassword"
+        aria-labelledby="confirmAccountPassword" required>
     </form>
 
     <div class="button-container">
-      <button type="button" id="resetPasswordButton">Reset Password</button>
+      <input type="submit" id="applyForAccountButton" value="Register">
+    </div>
+
+    <div id="accountResultsContainer">
+      <table id="accountResultsTable">
+        <thead>
+          <tr>
+            <th>Field</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
     </div>
   </main>
 
- <footer>
+  <footer>
     <div class="footer-container">
       Copyright &copy; 2083 EL REY UNO
       <p>For More Information Please Visit <a href="https://www.github.com/ElReyUno" target="_blank" rel="noopener"
@@ -56,7 +69,7 @@
       <p><a href="mailto:ssmith237@live.spcollege.edu">ElReyUno@EddieZeboASlightWindow.org</a></p>
 
   <script src="./js/style.js" defer></script>
-  <script src="./js/reset.js"></script>
+  <script src="./js/registration.js"></script>
 </body>
 
 </html>

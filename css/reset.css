@@ -49,10 +49,9 @@ head {
    margin-bottom: 5px;
  }
  
- form input[type="text"], 
- form input[type="email"],
- form input[type="number"],
- form input[type="submit"] { 
+ form input[type="text"],
+ form input[type="password"],
+ form input[type="button"] {
    padding: 8px;
    margin-bottom: 10px;
    border: 1px solid #ccc;
@@ -79,23 +78,6 @@ head {
    margin-left: 5px;
  }
  
- #resultsTable {
-   border-collapse: collapse;
-   width: 100%;
-   margin-top: 20px;
-   margin-bottom: 20px;
-   display: none;
- }
- 
- #resultsTable th, #resultsTable td {
-   border: 1px solid black;
-   padding: 8px;
- }
- 
- #resultsTable .error {
-   color: red;
- }
- 
- .hidden {
-   display: none;
- }
+.input-error {
+   border-color: red;
+}
