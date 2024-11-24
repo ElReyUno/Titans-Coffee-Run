@@ -29,13 +29,19 @@ document.addEventListener('DOMContentLoaded', function () {
     return new Order(new Date(), product, size, quantity, notes);
   }
 
+  function clearCart() {
+    localStorage.removeItem('cart');
+  }
+
   const orderForm = document.getElementById('orderForm');
   orderForm.addEventListener('submit', function (event) {
     event.preventDefault();
+    clearCart(); // Clear the cart before adding new items
+
     const formData = new FormData(orderForm);
     const specialNotes = formData.get('specialNotes') || '';
     const donateTitan = formData.get('donateTitanHidden') === 'true';
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cart = [];
 
     products.forEach((product, index) => {
       const size = formData.get(`${product.name.toLowerCase().replace(' ', '')}Size`);

@@ -26,65 +26,48 @@ document.addEventListener('DOMContentLoaded', function () {
       inputFields.forEach(inputField => inputField.classList.remove('input-error'));
    }
 
-   const requiredFields = [
-      accountEmailInput
-    ];
-    
-    const fieldDisplayNames = {
-      email: 'Email',
-      password: 'Password',
-      reEnterPassword: 'Re-Enter Password'
-    };
-
    function storeFormData(formData) {
-      // Map key-value pairs
-      const userData = {
-         Password: formData.Password,
-         Confirm_Password: formData.Confirm_Password
-      };
+      // Retrieve existing users from local storage
+      let users = JSON.parse(localStorage.getItem('users')) || [];
 
-      // Store form data in local storage using email as key
-      localStorage.setItem(formData.Email, JSON.stringify(userData));
-      
-      // Store username and password 
-      localStorage.setItem('storedUserName', formData.Email);
-      localStorage.setItem('storedPassword', formData.Password);
+      // Check if the email already exists
+      const userExists = users.some(user => user.email.toLowerCase() === formData.Email.toLowerCase());
 
-      // Define variables before logging to local storage
-      const storedUserName = localStorage.getItem('storedUserName');
-      const storedPassword = localStorage.getItem('storedPassword');
-      
-      /*
-      // TRY THIS
-      localStorage.setItem('userData', JSON.stringify({
-  "admin": { "email": "username":password },
-  "user1": { "email": "username":password },
-  "user2": { "email": "username":password" }
-}));
-      */
+      if (userExists) {
+         displayError(accountEmailInput, 'Username already exists.');
+         return false;
+      }
+
+      // Add new user data
+      users.push({
+         email: formData.Email,
+         password: formData.Password
+      });
+
+      // Store updated users array back to local storage
+      localStorage.setItem('users', JSON.stringify(users));
+      return true;
    }
 
    function displayStoredData() {
       const email = accountEmailInput.value.trim();
-      const storedData = localStorage.getItem(email);
-      if (storedData) {
-         const formData = JSON.parse(storedData);
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+      const user = users.find(user => user.email === email);
+
+      if (user) {
          accountResultsTable.querySelector('tbody').innerHTML = '';
 
          const emailRow = accountResultsTable.insertRow();
          const emailFieldCell = emailRow.insertCell();
          const emailValueCell = emailRow.insertCell();
          emailFieldCell.textContent = 'Email';
-         emailValueCell.textContent = email;
+         emailValueCell.textContent = user.email;
 
-         for (const field in formData) {
-            const row = accountResultsTable.insertRow();
-            const fieldCell = row.insertCell();
-            const valueCell = row.insertCell();
-
-            fieldCell.textContent = field;
-            valueCell.textContent = formData[field];
-         }
+         const passwordRow = accountResultsTable.insertRow();
+         const passwordFieldCell = passwordRow.insertCell();
+         const passwordValueCell = passwordRow.insertCell();
+         passwordFieldCell.textContent = 'Password';
+         passwordValueCell.textContent = user.password;
 
          accountResultsTable.style.display = 'table';
          accountResultsContainer.style.display = 'block';
@@ -142,10 +125,11 @@ document.addEventListener('DOMContentLoaded', function () {
          accountResultsTable.style.display = 'table';
          accountResultsContainer.style.display = 'block';
       } else {
-         storeFormData(formData);                           // Function that stores data locally in browser
-         accountResultsTable.style.display = 'none';
-         accountResultsContainer.style.display = 'none';
-         window.location.href = 'login.html';               // Redirect to login.html if valid
+         if (storeFormData(formData)) { // Only redirect if storing data was successful
+            accountResultsTable.style.display = 'none';
+            accountResultsContainer.style.display = 'none';
+            window.location.href = 'login.html'; // Redirect to login.html if valid
+         }
       }
 
       return isValid;

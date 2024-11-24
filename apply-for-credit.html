@@ -32,36 +32,36 @@
   <main>
     <form action="#" method="post" class="form-container">
       <label for="myEmail">Email Address:</label>
-      <input type="email" id="myEmail" name="myEmail" required>
+      <input type="email" id="myEmail" name="myEmail" aria-labelledby="myEmail" required>
 
       <label for="myReEmail">Re-Enter Email Address:</label>
-      <input type="email" id="myReEmail" name="myReEmail" required>
+      <input type="email" id="myReEmail" name="myReEmail" aria-labelledby="myReEmail" required>
 
       <label for="myFirstName">First Name:</label>
-      <input type="text" id="myFirstName" name="myFirstName" required>
+      <input type="text" id="myFirstName" name="myFirstName" aria-labelledby="myFirstName" required>
 
       <label for="myLastName">Last Name:</label>
-      <input type="text" id="myLastName" name="myLastName" required>
+      <input type="text" id="myLastName" name="myLastName" aria-labelledby="myLastName" required>
 
       <label for="myCity">City:</label>
-      <input type="text" id="myCity" name="myCity" required>
+      <input type="text" id="myCity" name="myCity" aria-labelledby="myCity" required>
 
       <label for="myState">State:</label>
-      <input type="text" id="myState" name="myState" required>
+      <input type="text" id="myState" name="myState" aria-labelledby="myState" required>
 
       <label for="myZip">ZIP Code:</label>
-      <input type="text" id="myZip" name="myZip" required>
+      <input type="text" id="myZip" name="myZip" aria-labelledby="myZip" required>
 
       <label for="myGross">Gross Income:</label>
-      <input type="text" id="myGross" name="myGross" required>
+      <input type="text" id="myGross" name="myGross" aria-labelledby="myGross" required>
 
       <label for="mySsn">Last 4 digits of SSN:</label>
-      <input type="text" id="mySsn" name="mySsn" required>
+      <input type="text" id="mySsn" name="mySsn" aria-labelledby="mySsn" required>
     </form>
 
     <div class="checkbox-container">
       <label for="applyForCredit">
-        <input type="checkbox" id="applyForCredit" name="applyForCredit" required>
+        <input type="checkbox" id="applyForCredit" name="applyForCredit" aria-label="applyForCredit" required>
         This request serves as my written instruction to Titan Coffee Run to obtain a “soft inquiry” about
         my credit information, which will not affect my credit score. I agree that Titan Coffee Run may send me an email
         confirming my request.
@@ -69,8 +69,8 @@
     </div>
 
     <div class="button-container">
-      <input type="submit" id="myApply" value="Apply">
-      <button type="reset" id="resetButton">Reset</button>
+      <input type="submit" id="myApply" value="Apply" aria-label="myApply">
+      <button type="reset" id="resetButton" aria-label="resetButton">Reset</button>
     </div>
 
     <div id="resultsContainer">
