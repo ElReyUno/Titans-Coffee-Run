@@ -1,0 +1,16 @@
+{
+   "orders": [ 
+       { "id": 1, "date": "3/22/2021",
+               "product": {"name": "Donuts", "price": 5.00, "size": "small", "quantity": 1 }
+       },
+       { "id": 2, "date": "4/23/2021",
+              "product" : {"name": "Cappucino", "price": 9.00, "size": "Large", "quantity": 5 }
+       },
+       { "id": 3, "date": "9/14/2024",
+              "product" : {"name": "Cappucino", "price": 9.00, "size": "Large", "quantity": 7 }
+       },
+       { "id": 4, "date": "11/14/2024",
+       "product" : {"name": "Macaroons", "price": 4.00, "size": "Medium", "quantity": 10 }
+      }
+   ]
+}
