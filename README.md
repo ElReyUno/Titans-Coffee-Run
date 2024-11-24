@@ -10,6 +10,7 @@ Skills include:
 - Cryptography and Security
 - High-Performance JS
 - Unit Testing
+- Retrieve Data From Backend Server Using REST
 
 ## Objectives
 ### Utilize the different components of the internet that facilitate communications in web applications such as:
