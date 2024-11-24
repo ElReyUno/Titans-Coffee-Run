@@ -43,37 +43,20 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       if (!isValid) {
-         localUserNameInput.value = ''; // Reset username field
          return false;
       }
 
-      const localStorageUserName = localStorage.getItem('storedUserName');
+      let users = JSON.parse(localStorage.getItem('users')) || [];
+      const userIndex = users.findIndex(user => user.email.toLowerCase() === formData.UserName.toLowerCase());
 
-      if (localUserNameInput && newPassword) {
-         if (formData.UserName.toLowerCase() !== localStorageUserName.toLowerCase()) {
-            displayError(localUserNameInput, 'Username not found. Please try again.');
-            localUserNameInput.value = ''; // Reset username field
-            return false; // Stop further validation
-         }
-
-         if (formData.Password === '') {
-            displayError(newPassword, 'Please enter new password.');
-         }
-
-         if (formData.UserName.toLowerCase() === localStorageUserName.toLowerCase() && formData.Password !== '') {
-            localStorage.setItem('storedPassword', formData.Password);
-            window.location.href = loginPagePath; // If valid redirect to login.html
-         } else {
-            return false;
-         }
-      } else {
+      if (userIndex === -1) {
          displayError(localUserNameInput, 'Username not found. Please try again.');
-         displayError(newPassword, 'Please enter new password.');
-         localUserNameInput.value = ''; // Reset username field
-         newPassword.value = ''; // Reset password field
-         clearErrors(); // Clear previous errors
          return false;
       }
+
+      users[userIndex].password = formData.Password;
+      localStorage.setItem('users', JSON.stringify(users));
+      window.location.href = loginPagePath; // If valid redirect to login.html
 
       return true;
    }
