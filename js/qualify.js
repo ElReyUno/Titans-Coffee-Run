@@ -41,8 +41,6 @@ const requiredFields = [
 ];
 
 const fieldDisplayNames = {
-  email: 'Email',
-  reEnterEmail: 'Re-Enter Email',
   firstName: 'First Name',
   lastName: 'Last Name',
   city: 'City',

@@ -21,15 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
       inputFields.forEach(inputField => inputField.classList.remove('input-error'));
    }
 
-   const requiredFields = [
-      localUserNameInput
-   ];
-
-   const fieldDisplayNames = {
-      userName: 'UserName',
-      password: 'Password'
-   };
-
    function validateForm() {
       clearErrors(); // Clear previous errors before validation
 
@@ -57,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       const localStorageUserName = localStorage.getItem('storedUserName');
-      //const localStoragePassword = localStorage.getItem('storedPassword');
 
       if (localUserNameInput && newPassword) {
          if (formData.UserName.toLowerCase() !== localStorageUserName.toLowerCase()) {
