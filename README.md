@@ -53,6 +53,7 @@ Skills include:
 - CSS
 - HTML
 - Markdown
+- AJAX
 - Version Control Systems (VCS) (Git, GitHub, GitBash)
 - Postman
 - Visual Studio Code
